@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let i of user">{{ i.title }}</li>
+</ul>
+<input
+  #nametype
+  type="text"
+  [value]="newName"
+  (change)="newName = nametype.value"
+/>
+<input
+  #jobtype
+  type="text"
+  [value]="newJob"
+  (change)="newJob = jobtype.value"
+/>
+<button (click)="adduser()">Add user</button>

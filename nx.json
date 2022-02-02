@@ -4,7 +4,7 @@
     "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/node"
   },
   "implicitDependencies": {
     "package.json": {
@@ -15,14 +15,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NzZlODJmZDUtMTg5NS00NWE1LWIyZTMtZjhhMzZlYWUzMzlifHJlYWQtd3JpdGU="
       }
     }
   },
@@ -33,5 +29,21 @@
         "projects": "dependencies"
       }
     ]
+  },
+  "defaultProject": "backend",
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
+    }
   }
 }
